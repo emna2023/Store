@@ -6,8 +6,6 @@
         :contenu="info" :titre="cle" />
     </li>
 </ul> --> 
-
-
  <ul>
     <li class="p-3.5" >
         <strong>{{oneProduct.title}} </strong>
@@ -19,7 +17,7 @@
         <img alt="emna" :src="article.image" />
      </li>
     <li> 
-        <NuxtLink :to="'/article/' + oneProduct.id">
+        <NuxtLink  v-if="routeName!='article-id'"   :to="'/article/' + oneProduct.id">
         <span class="bg-amber-300">voir les détails du produit</span>
         </NuxtLink>
     </li>
@@ -37,6 +35,7 @@ const props=defineProps({
 
     article: Object,
 });
+const routeName=useRoute().name;
 
 const oneProduct=props.article;
 const dataProducts=ref('');
