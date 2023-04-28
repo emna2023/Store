@@ -1,7 +1,4 @@
 <template>
-
-
-
 <div v-if="titre==='rating'" 
 ratingcontenu="contenu" ratingtitre="titre" >
   </div>
@@ -10,7 +7,7 @@ ratingcontenu="contenu" ratingtitre="titre" >
   <strong> {{'ratingtitre'}} : {{ ratingcontenu }}</strong> <br/>
 
 
-<NuxtLink to:="'article/' + 'titre'">
+<NuxtLink to:="'article/' + 'route.param.id'">
     <button class="bouton">voir l'article</button>
 </NuxtLink>
 </div>
