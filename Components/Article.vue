@@ -17,7 +17,7 @@
         <img alt="emna" :src="article.image" />
      </li>
     <li> 
-        <NuxtLink  v-if="routeName!='article-id'"   :to="'/article/' + oneProduct.id">
+        <NuxtLink  v-if="routeName != 'article-id'"   :to="'/article/' + oneProduct.id">
         <span class="bg-amber-300">voir les détails du produit</span>
         </NuxtLink>
     </li>
