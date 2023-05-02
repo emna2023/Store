@@ -6,7 +6,7 @@
         :contenu="info" :titre="cle" />
     </li>
 </ul> --> 
- <ul>
+ <ul class="justify-around">
     <li class="p-3.5" >
         <strong>{{oneProduct.title}} </strong>
     </li>
@@ -14,7 +14,7 @@
         <strong>{{ index }} : {{ contenu }} </strong>
     </li>
     <li>
-        <img alt="emna" :src="article.image" />
+        <img alt="emna" :src="oneProduct.image" />
      </li>
     <li> 
         <NuxtLink  v-if="routeName != 'article-id'"   :to="'/article/' + oneProduct.id">
@@ -36,8 +36,12 @@ const props=defineProps({
     article: Object,
 });
 const routeName=useRoute().name;
+console.log('le route name:  '+routeName);
+
 
 const oneProduct=props.article;
+console.log('id de larticle: '+oneProduct.id);
+
 const dataProducts=ref('');
 dataProducts.value={
 'categorie':oneProduct.category,

@@ -1,19 +1,24 @@
 <template>
-<strong>Liste des catégories</strong>
+    <main>
+<strong class="py-6">Liste des catégories</strong>
    <ul>
     <li v-for="category in categories">
-        <NuxtLink to="">
+        <NuxtLink to="'/category/'" +category>  
     {{ category }}
-</NuxtLink>
+ </NuxtLink>  
     </li>
    </ul> 
+</main>
     
 </template>
 
 <script setup>
 
 
-    const {data:categories}= await usefatch('https://fakestoreapi.com/products/categories');
+    const {data:categories}= await useFetch('https://fakestoreapi.com/products/categories');
+    console.log(categories.value);
+
+
     
 
 </script>
